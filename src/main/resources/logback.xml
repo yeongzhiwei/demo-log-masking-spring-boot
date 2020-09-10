@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+
+    <appender name="Console"
+              class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="com.yeongzhiwei.demolog.MaskingPatternLayout">
+            <fullMaskProperties>customerName</fullMaskProperties>
+            <partialMaskProperties>customerIdentifier|contactNumber</partialMaskProperties>
+            <pattern>%d [%thread] %-5level %logger{35} - %msg%n</pattern>
+        </layout>
+    </appender>
+
+    <logger name="com.yeongzhiwei.demolog">
+        <appender-ref ref="Console" />
+    </logger>
+
+</configuration>
